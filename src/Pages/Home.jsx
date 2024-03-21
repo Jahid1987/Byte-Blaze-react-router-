@@ -1,4 +1,6 @@
+import { Outlet } from "react-router-dom";
 import Nav from "../Coponents/Nav";
+import Footer from "../Coponents/Footer";
 
 const Home = () => {
   return (
@@ -6,7 +8,11 @@ const Home = () => {
       <div className="h-16">
         <Nav></Nav>
       </div>
-      <h2>Home page</h2>
+      <div className="min-h-[calc(100vh-116px)]">
+        <Outlet></Outlet>
+      </div>
+
+      <Footer></Footer>
     </>
   );
 };

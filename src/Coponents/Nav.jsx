@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
   const [theme, setTheme] = useState("light");
@@ -18,21 +19,36 @@ const Nav = () => {
   return (
     <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
       <div className="flex-1">
-        <a className="btn btn-ghost text-2xl gap-0 text-secondary normal-case">
+        <Link to="/" className=" text-2xl gap-0 text-secondary normal-case">
           Byte<span className="text-primary">Blaze</span>
-        </a>
+        </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>Blogs</a>
-          </li>
-          <li>
-            <a>Bookmarks</a>
-          </li>
+        <ul className="menu menu-horizontal px-1 flex gap-3">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-primary font-bold" : "font-bold"
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-primary font-bold" : "font-bold"
+            }
+            to="/blogs"
+          >
+            Blogs
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-primary font-bold" : "font-bold"
+            }
+            to="/bookmarks"
+          >
+            Bookmarks
+          </NavLink>
         </ul>
         <label className="flex cursor-pointer gap-2">
           <svg
