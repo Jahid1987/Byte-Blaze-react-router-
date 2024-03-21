@@ -28,7 +28,7 @@ const Nav = () => {
             <a>Home</a>
           </li>
           <li>
-            <a>Blog</a>
+            <a>Blogs</a>
           </li>
           <li>
             <a>Bookmarks</a>
